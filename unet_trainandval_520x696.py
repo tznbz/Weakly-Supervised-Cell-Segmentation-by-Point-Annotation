@@ -282,33 +282,6 @@ def run_training(dataset = 1,sigma = 1,lbsthresh=1,maxIter=2500,selfiter = True,
             dname = 'PhC-C2DH-U373'
             test_im = np.load('data/PhC-C2DH-U373_test_data.npy')
             test_lbs = np.load('data/PhC-C2DH-U373_test_label.npy')
-        if dataset ==2:
-            im = np.load('data/PhC-C2DH-U373_train_data.npy')
-            lbs = np.load('data/PhC-C2DH-U373_train_label.npy')
-            for i in range(len(lbs)):
-                lbs[i,:,:,0] = cv2.GaussianBlur(lbs[i,:,:,0],(sigma,sigma),0)
-            lbs[lbs>lbsthresh] = 1
-            dname = 'PhC-C2DH-U373'
-            test_im = np.load('data/PhC-C2DH-U373_test_data.npy')
-            test_lbs = np.load('data/PhC-C2DH-U373_test_label.npy')
-        if dataset ==3:
-            im = np.load('data/PhC-C2DH-U373_train_data.npy')
-            lbs = np.load('data/PhC-C2DH-U373_train_label_random'+str(lbsshiftid)+'.npy')
-            dname = 'PhC-C2DH-U373_random'+str(lbsshiftid)
-            test_im = np.load('data/PhC-C2DH-U373_test_data.npy')
-            test_lbs = np.load('data/PhC-C2DH-U373_test_label.npy')
-            #im = im[:len(im//8)]
-            #lbs = lbs[:len(im//8)]
-        if dataset ==4:
-            im = np.load('data/PhC-C2DH-U373_train_data.npy')
-            lbs = np.load('data/PhC-C2DH-U373_train_label_random'+str(lbsshiftid)+'.npy')
-            #lbs2 = nib.load('data/PhC-C2DH-U373_train_label_center.nii').get_data()
-            lbs2 = nib.load('data/PhC-C2DH-U373_train_label_boundary.nii').get_data()
-            lbs = lbs2.astype(lbs.dtype).reshape(lbs.shape)
-            dname = 'PhC-C2DH-U373_random'+str(lbsshiftid)
-            test_im = np.load('data/PhC-C2DH-U373_test_data.npy')
-            test_lbs = np.load('data/PhC-C2DH-U373_test_label.npy')
-
 
 
         #lbs_gradiens = np.gradient(lbs,axis=[1,2])[0]
