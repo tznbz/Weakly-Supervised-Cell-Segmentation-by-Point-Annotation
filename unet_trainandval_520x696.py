@@ -1,11 +1,11 @@
 ##-------------------------------------------------------------------
 ## Copyright (C) 201 Tianyi Zhao
-## File : 5Conv_trainandval.py
-## Author : Tianyi Zhao <tianyi@12sigmamedicalimaging.com>
+## File : unet_trainandval_520x696.py
+## Author : Tianyi Zhao <t.zhao0321@gmail.com>
 ## Description :
 ## --
-## Created : <2017-05-25>
-## Updated: Time-stamp: <2017-05-25 22:49:10>
+## Created : <2021-05-31>
+## Updated: Time-stamp: <2021-05-31 22:49:10>
 ##-------------------------------------------------------------------
 
 
